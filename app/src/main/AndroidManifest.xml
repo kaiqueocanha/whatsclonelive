@@ -9,10 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.WhatsClone">
+        <activity android:name=".VisualizarImagemActivity"></activity>
         <activity
             android:name=".InicioActivity"
             android:label="@string/title_activity_inicio"
-            android:theme="@style/Theme.WhatsClone.NoActionBar"></activity>
+            android:theme="@style/Theme.WhatsClone.NoActionBar" />
         <activity android:name=".VerifiqueEmailActivity" />
         <activity android:name=".CadastroActivity" />
         <activity android:name=".MainActivity">
