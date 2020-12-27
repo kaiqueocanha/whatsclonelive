@@ -20,8 +20,8 @@ import org.w3c.dom.Document
 
 class InicioActivity : AppCompatActivity() {
 
-    private var db = FirebaseFirestore.getInstance()
-    private var auth = FirebaseAuth.getInstance()
+    var db = FirebaseFirestore.getInstance()
+    var auth = FirebaseAuth.getInstance()
 
     lateinit var usuarioLogado: DocumentSnapshot
 
@@ -42,6 +42,14 @@ class InicioActivity : AppCompatActivity() {
     }
 
     private fun loadUsuario() {
+
+        this.db.collection("usuarios")
+            .document(this.auth.currentUser!!.uid)
+            .addSnapshotListener { usuario, _ ->
+
+                this.usuarioLogado = usuario!!
+
+            }
 
         this.db.collection("usuarios")
             .document(this.auth.currentUser!!.uid)
